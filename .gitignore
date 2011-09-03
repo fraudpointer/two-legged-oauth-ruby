@@ -1,3 +1,4 @@
+test/settings.yml
 *.gem
 .bundle
 .rvmrc

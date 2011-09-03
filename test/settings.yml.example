@@ -1,0 +1,5 @@
+# Copy this file to settings.yml and populate with your own working set of data
+# (see the README for more info).
+xoauth_requestor_id: "email@domain.com"
+consumer_key: ""
+consumer_key_secret: ""
