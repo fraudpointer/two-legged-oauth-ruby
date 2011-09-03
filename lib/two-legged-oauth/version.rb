@@ -1,7 +1,3 @@
-module Two
-  module Legged
-    module Oauth
-      VERSION = "0.0.1"
-    end
-  end
+module TwoLeggedOAuth
+  VERSION = "0.0.1"
 end
