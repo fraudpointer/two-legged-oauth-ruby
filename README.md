@@ -49,7 +49,7 @@ require 'two-legged-oauth'
 
 ```ruby
 # Create a normal consumer instance
-consumer = OAuth::Consumer.new("key", "secret")
+oauth_consumer = OAuth::Consumer.new("key", "secret")
 
 # Initialize a TwoLeggedAccessToken specifying the xoauth_requestor_id
 access_token = OAuth::TwoLeggedAccessToken.new(oauth_consumer, "user@domain.com")
