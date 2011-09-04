@@ -22,12 +22,12 @@ module OAuth
         xoauth_param = "xoauth_requestor_id=#{xoauth_requestor_id}"
         escaped_xoauth_param = "xoauth_requestor_id=#{CGI.escape(xoauth_requestor_id)}"
 
-        if request_uri.query.present?
+        if request_uri.query
           request_uri.query.gsub!(xoauth_param, '')
           request_uri.query.gsub!(escaped_xoauth_param, '')
         end
 
-        request_uri.query = request_uri.query.present? ?
+        request_uri.query = !request_uri.query.nil? && request_uri.query != "" ?
             "#{request_uri.query}&#{escaped_xoauth_param}" :
             "#{escaped_xoauth_param}"
 
