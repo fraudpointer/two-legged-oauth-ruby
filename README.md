@@ -5,7 +5,8 @@
 ## Description
 
 The purpose of this gem is to make the [oauth gem](https://github.com/oauth/oauth-ruby) play nice
-with Google's custom 2 legged OAuth (2LO), used specifically for [Google Apps APIs](http://code.google.com/googleapps/) accessed from [Google Apps Marketplace applications](http://code.google.com/googleapps/marketplace/).
+with Google's custom 2 legged OAuth (2LO), used specifically for [Google Apps APIs](http://code.google.com/googleapps/)
+accessed from [Google Apps Marketplace applications](http://code.google.com/googleapps/marketplace/).
 
 For more info on the 2 legged OAuth see these :
 
@@ -26,39 +27,46 @@ This gem has been tested with the following libraries so far and seems to be wor
 
 Add on your Gemfile :
 
-    gem 'two-legged-oauth'
+```ruby
+gem 'two-legged-oauth'
+```
 
 ### By hand
 
 On the console :
 
-    gem install two-legged-oauth
+```bash
+gem install two-legged-oauth
+```
 
 On your code :
 
-    require 'two-legged-oauth'
+```ruby
+require 'two-legged-oauth'
+```
 
 ## Usage
 
-Create a normal consumer instance :
+```ruby
+# Create a normal consumer instance
+consumer = OAuth::Consumer.new("key", "secret")
 
-    consumer = OAuth::Consumer.new("key", "secret")
+# Initialize a TwoLeggedAccessToken specifying the xoauth_requestor_id
+access_token = OAuth::TwoLeggedAccessToken.new(oauth_consumer, "user@domain.com")
 
-Initialize a TwoLeggedAccessToken specifying the xoauth_requestor_id :
-
-    access_token = OAuth::TwoLeggedAccessToken.new(oauth_consumer, "user@domain.com")
-
-Pass that access token to Google Data libraries (or your custom scripts) :
-
-    g = GoogleSpreadsheet.login_with_oauth(access_token)
+# Pass that access token to Google Data libraries (or your custom scripts)
+gs = GoogleSpreadsheet.login_with_oauth(access_token)
+```
 
 ## Internals
 
-This thing works by rewriting the requested URL on-the-fly and appends the xoauth_requestor_id param appropriately. This may be dangerous at times so be aware that some well hidden bugs may come up...
+This thing works by rewriting the requested URL on-the-fly and appends the xoauth_requestor_id param appropriately.
+This may be dangerous at times so be aware that some well hidden bugs may come up...
 
 ## Bugs/fixes
 
-...
+Report any issues on the [github's issue tracker](https://github.com/fraudpointer/two-legged-oauth-ruby/issues)
+or send a pull request if you have nailed the bug.
 
 ## Contributing
 
@@ -71,4 +79,5 @@ Tested contributions are always welcome! Here's what you should do:
 
 # License
 
-two-legged-oauth is copyright 2011 by [Fraudpointer](http://www.fraudpointer.com), released under the MIT License (see LICENSE for details).
+two-legged-oauth is copyright 2011 by [Fraudpointer](http://www.fraudpointer.com), 
+released under the MIT License (see LICENSE for details).
