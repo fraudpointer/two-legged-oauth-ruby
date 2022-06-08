@@ -79,5 +79,5 @@ Tested contributions are always welcome! Here's what you should do:
 
 # License
 
-two-legged-oauth is copyright 2011 by [Fraudpointer](http://www.fraudpointer.com), 
+two-legged-oauth is copyright 2011 by Fraudpointer, 
 released under the MIT License (see LICENSE for details).
